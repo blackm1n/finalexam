@@ -8,7 +8,7 @@ from random import sample
 
 def main(request):
     logged_in = True if request.user.is_authenticated else False
-    recipes = sample(list(Recipe.objects.all()), 5)
+    recipes = sample(list(Recipe.objects.all()), 5 if len(list(Recipe.objects.all())) >= 5 else len(list(Recipe.objects.all())))
     context = {'logged_in': logged_in, 'recipes1': recipes[:3], 'recipes2': recipes[3:]}
     if logged_in:
         context['user'] = request.user

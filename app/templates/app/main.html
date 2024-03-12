@@ -1,0 +1,36 @@
+{% extends 'app/base.html' %}
+
+{% block title %}
+    Главная
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="row text-center">
+            <h1 class="display-2">Добро пожаловать на сайт</h1>
+            <p>Вот наши рецепты</p>
+        </div>
+        <div class="row">
+            {% for recipe in recipes1 %}
+                <div class="col-12 col-md-4 text-center">
+                    <h2 class="display-6">{{ recipe.title }}</h2>
+                    {{ recipe.image_tag }}
+                    <p>{{ recipe.description }}</p>
+                    <p>Время готовки: {{ recipe.cook_time }}</p>
+                    <a href="/recipe/{{ recipe.id }}/">Полный рецепт</a>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for recipe in recipes2 %}
+                <div class="col-12 col-md-6 text-center">
+                    <h2 class="display-6">{{ recipe.title }}</h2>
+                    {{ recipe.image_tag }}
+                    <p>{{ recipe.description }}</p>
+                    <p>Время готовки: {{ recipe.cook_time }}</p>
+                    <a href="/recipe/{{ recipe.id }}/">Полный рецепт</a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

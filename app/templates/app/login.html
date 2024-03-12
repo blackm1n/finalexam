@@ -1,0 +1,16 @@
+{% extends 'app/form.html' %}
+
+{% block title %}
+    Вход на сайт
+{% endblock %}
+
+{% block text %}
+    Введите ваше имя пользователя и пароль
+    {% if error %}
+        <p class="text-danger">{{ message }}</p>
+    {% endif %}
+{% endblock %}
+
+{% block button %}
+    <button type="submit" class="btn btn-primary">Войти</button>
+{% endblock %}

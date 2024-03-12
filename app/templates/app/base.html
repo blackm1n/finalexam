@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css">
+    <title>
+        {% block title %}
+            Название
+        {% endblock %}
+    </title>
+</head>
+<body class="container-fluid">
+    <header class="row modal-header">
+        <ul class="nav nav-pills justify-content-end align-items-end">
+            <li class="nav-item"><a href="/" class="nav-link">Главная</a></li>
+            <li class="nav-item"><a href="/all_recipes/1/" class="nav-link">Все рецепты</a></li>
+            {% if logged_in %}
+            <li class="nav-item"><a href="/create_recipe/" class="nav-link">Создать рецепт</a></li>
+            <li class="nav-item"><a href="/your_recipes/1/" class="nav-link">Ваши рецепты</a></li>
+            <li class="nav-item"><a href="/logout/" class="nav-link">Выйти</a></li>
+            <li class="nav-item"><p class="nav-link text-dark mb-0">Здравствуйте, {{ user.username }}</p></li>
+            {% else %}
+            <li class="nav-item"><a href="/register/" class="nav-link">Регистрация</a></li>
+            <li class="nav-item"><a href="/login/" class="nav-link">Войти</a></li>
+            <li class="nav-item"><p class="nav-link text-dark mb-0">Здравствуйте, незнакомец!</p></li>
+            {% endif %}
+        </ul>
+        <hr>
+    </header>
+    {% block content %}
+        Контент
+    {% endblock %}
+    <footer class="row fixed-bottom modal-footer text-center">
+        <hr>
+        <p>Вставьте футер сюда</p>
+    </footer>
+    <script src="../../static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

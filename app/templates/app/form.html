@@ -1,0 +1,23 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <section>
+        <div class="row text-center">
+            <h1 class="display-2">Добро пожаловать на сайт</h1>
+            <p>
+                {% block text %}
+                    Текст
+                {% endblock %}
+            </p>
+        </div>
+        <div class="row text-center">
+            <form class="col-2 offset-5 mb-5" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_div }}
+                {% block button %}
+                    Кнопка
+                {% endblock %}
+            </form>
+        </div>
+    </section>
+{% endblock %}

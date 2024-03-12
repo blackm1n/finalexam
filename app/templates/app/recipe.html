@@ -1,0 +1,24 @@
+{% extends 'app/base.html' %}
+
+{% block title %}
+    Главная
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="row text-center">
+            <h1 class="display-2">Добро пожаловать на сайт</h1>
+            <p>Вот ваш рецепт</p>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="display-6">{{ recipe.title }}</h2>
+                {{ recipe.image_tag }}
+                <p>{{ recipe.description }}</p>
+                <p>Шаги готовки: {{ recipe.steps }}</p>
+                <p>Время готовки: {{ recipe.cook_time }}</p>
+                <p>Автор: {{ recipe.author.username }}</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

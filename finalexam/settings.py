@@ -32,7 +32,7 @@ CSRF_COOKIE_SECURE = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    'blackm3n.pythonanywhere.com',
+    'blackm4n.pythonanywhere.com',
 ]
 
 
@@ -86,10 +86,10 @@ WSGI_APPLICATION = 'finalexam.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blackm3n$default',
-        'USER': 'blackm3n',
+        'NAME': 'blackm4n$default',
+        'USER': 'blackm4n',
         'PASSWORD': os.getenv('MYSQL_PASSWORD'),
-        'HOST': 'blackm3n.mysql.pythonanywhere-services.com',
+        'HOST': 'blackm4n.mysql.pythonanywhere-services.com',
         'OPTIONS': {
             'init_command': "SET NAMES 'utf8mb4';SET sql_mode='STRICT_TRANS_TABLES'",
             'charset': 'utf8mb4',
